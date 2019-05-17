@@ -9,6 +9,8 @@ $stdout = fopen('php://stdout', 'w');
     fprintf(STDOUT,"\nEnter second number : ");
     fscanf(STDIN,"%d",$b);
     $a=$a+$b;
-    
+
     echo "Sum : ".$a;
     
+
+?>
