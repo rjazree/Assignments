@@ -12,30 +12,20 @@ $stdout = fopen('php://stdout', 'w');
 
         }
         echo "\n\n";
-        for($i=0;$i<$n;$i++){
-            if($num[$i]>$num[$i+1]){
-            $flag1=$num[$i];
-            $num[$i+1]=$num[$i];
-            }
-            else{
-            $flag1=$num[$i+1];
-            
+        $high=$num[0];
+        for($i=0;$i<$n;$i++){     
+            if($high<$num[$i]){
+                $high=$num[$i];
             }
         }
-
+        echo "high : ".$high."\n";
+        $low=$num[0];
         for($i=0;$i<$n;$i++){
-            if($num[$i]<$num[$i+1]){
-            $flag2=$num[$i];
-            $num[$i+1]=$num[$i];
-            echo "1 .".$flag2."\n";
-            }
-            else{
-            $flag2=$num[$i+1];
-            
-            echo "2 .".$flag2."\n";
+            if($low>$num[$i]){
+               $low=$num[$i];
             
             }
+            
+            
         }
-
-    echo "\n\n".$flag1;
-    echo "\n\n".$flag2;
+        echo "low : ".$low;
