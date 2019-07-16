@@ -7,10 +7,18 @@ $stdout = fopen('php://stdout', 'w');
     $f1=1;
     $f2=1;
     echo "1: ".$f1."\n2: ".$f2."\n";
-    for($i=3;$i<=40;$i++){
+    $i=3;
+    while(true){
+       
         $next=$f1+$f2;
-        echo $i.": ".$next."\n";
+        
         $f1=$f2;
         $f2=$next;
+        if($next> 1000000)
+            break;
+        else {
+            echo $i.": ".$next."\n";
+            $i++;
+        }
 
     }
